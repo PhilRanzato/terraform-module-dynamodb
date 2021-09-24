@@ -33,3 +33,21 @@ variable "dynamodb_table_hash_key_type" {
   description = "DynamoDB table partition key type (S, N, B - String, Number, Binary)"
   default     = "S"
 }
+
+variable "dynamodb_table_billing_mode" {
+  type        = string
+  description = "DynamoDB table billing mode: Controls how you are charged for read and write throughput and how you manage capacity"
+  default     = "PROVISIONED"
+}
+
+variable "dynamodb_table_read_capacity" {
+  type        = number
+  description = "The number of read units for this table"
+  default     = 20
+}
+
+variable "dynamodb_table_write_capacity" {
+  type        = number
+  description = "The number of write units for this table"
+  default     = 20
+}
